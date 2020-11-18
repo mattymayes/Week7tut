@@ -1,0 +1,50 @@
+﻿@page
+@model Week7tut.Pages.Students.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Students</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Students.Id" />
+            <div class="form-group">
+                <label asp-for="Students.StudentId" class="control-label"></label>
+                <input asp-for="Students.StudentId" class="form-control" />
+                <span asp-validation-for="Students.StudentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.StudentName" class="control-label"></label>
+                <input asp-for="Students.StudentName" class="form-control" />
+                <span asp-validation-for="Students.StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.StudentEmail" class="control-label"></label>
+                <input asp-for="Students.StudentEmail" class="form-control" />
+                <span asp-validation-for="Students.StudentEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.StudentPassword" class="control-label"></label>
+                <input asp-for="Students.StudentPassword" class="form-control" />
+                <span asp-validation-for="Students.StudentPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
